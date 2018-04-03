@@ -15,6 +15,8 @@ public class EasterEgg extends Egg {
 			cooked=true;
 		}
 		asdjgfffasdk
+		asdfasdf
+		asdfasdfsdf
 	}
 	
 	/*public void coluring() {
