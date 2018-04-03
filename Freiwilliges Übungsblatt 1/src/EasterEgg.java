@@ -18,6 +18,7 @@ public class EasterEgg extends Egg {
 		asdfasdf
 		asdfasdfsdf
 		asdfadf
+		asdasd
 	}
 	
 	/*public void coluring() {
