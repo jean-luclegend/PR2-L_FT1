@@ -14,5 +14,5 @@ public class RandTest {
 			System.out.println("Ei wird weggeworfen");
 		}
 	}
-
+PENIS
 }
