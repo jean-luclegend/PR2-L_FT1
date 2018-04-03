@@ -14,7 +14,7 @@ public class EasterEgg extends Egg {
 		else {
 			cooked=true;
 		}
-	PENES
+	
 	}
 	
 	/*public void coluring() {
