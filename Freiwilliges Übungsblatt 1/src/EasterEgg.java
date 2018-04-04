@@ -1,9 +1,9 @@
 
 public class EasterEgg extends Egg {
 		
-	private Colour eggColour;
+	private Colour eggColour=null;
 	private boolean cooked;
-	private boolean coloured=false;
+	//private boolean coloured=false;
 	
 	
 	public EasterEgg() {
@@ -36,11 +36,22 @@ public class EasterEgg extends Egg {
 
 	
 	public void colouring(Colour colour) {
-		if(coloured==true) {
-			eggColour = Colour.ugly;
-		}
-		else {
+		if(eggColour==null) {
 			eggColour = colour;
 		}
+		else {
+			eggColour = Colour.ugly;
+		}
+	}
+	
+	
+	
+	public Colour getEggColour() {
+		return eggColour;
+	}
+	
+	
+	public boolean getCooked() {
+		return cooked;
 	}
 }
