@@ -5,7 +5,7 @@ public class Egg  {
 	private int weight;
 	private Size eggsize ;
 	private LocalDate prodDate,expiDate;
-	private boolean defect=true;
+	private boolean defect=false;
 	
 	Random rand = new Random();
 	
@@ -48,10 +48,19 @@ public class Egg  {
 		 }
 		 
 		 if(rand.nextInt(100)< defectProb) {
-			 defect = false;
+			 defect = true;
 		 }
 		prodDate=LocalDate.now();
 		expiDate=prodDate.plusMonths(6);
+	}
+	
+	
+	private void Egg(Egg normalEgg) {
+		weight=this.weight;
+		eggsize=this.eggsize;
+		prodDate=this.prodDate;
+		expiDate=this.expiDate;
+		defect=this.defect;
 	}
 	
 	public int getWeight(){
@@ -75,7 +84,7 @@ public class Egg  {
 	}
 	
 	public void setDefect(boolean defect) {
-		if(defect==false) {
+		if(defect==true) {
 			this.defect=defect;
 		}
 	}

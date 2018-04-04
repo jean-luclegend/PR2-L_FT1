@@ -6,9 +6,16 @@ public class EasterEgg extends Egg {
 	private boolean coloured=false;
 	
 	
+	public EasterEgg() {
+		
+	}
+	
+	public EasterEgg(Egg normalEgg) {
+		super.Egg(normalEgg);
+	}
 	
 	public void cook() throws EggCrackException{
-		if(cooked==true||getDefect()==true) {
+		if(cooked||getDefect()) {
 			throw new EggCrackException();
 		}
 		else {
