@@ -11,7 +11,7 @@ public class EasterEgg extends Egg {
 	}
 	
 	public EasterEgg(Egg normalEgg) {
-		super.Egg(normalEgg);
+		super(normalEgg);
 	}
 	
 	public void cook() throws EggCrackException{

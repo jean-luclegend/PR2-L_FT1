@@ -11,7 +11,10 @@ public class ChickenFarm {
 		maximumOrderSize=5000;
 	}
 	
-	public ChickenFarm(int minimumOrderSize, int maximumOrderSize) {
+	public ChickenFarm(int minimumOrderSize, int maximumOrderSize) throws FarmDeliveryQuantityException {
+		if(minimumOrderSize>maximumOrderSize) {
+			throw new FarmDeliveryQuantityException(minimumOrderSize,maximumOrderSize);
+		}
 		this.minimumOrderSize=minimumOrderSize;
 		this.maximumOrderSize=maximumOrderSize;
 	}
@@ -39,7 +42,10 @@ public class ChickenFarm {
 	
 	
 
-	public Egg[][] deliverEgg(int quanOfEgg) {
+	public Egg[][] deliverEgg(int quanOfEgg) throws FarmDeliveryQuantityException{
+		if(quanOfEgg<minimumOrderSize||quanOfEgg>maximumOrderSize) {
+			throw new FarmDeliveryQuantityException(minimumOrderSize,maximumOrderSize,quanOfEgg);
+		}
 		Egg[][] eggBoxStack=createEggBoxStack(quanOfEgg);
 		for(int i=0;i<eggBoxStack.length;i++) {
 			for(int j=0; j<(eggBoxStack[i].length);j++) {
@@ -49,8 +55,17 @@ public class ChickenFarm {
 		return eggBoxStack;
 	}
 	
-	public Egg[][] deliverEgg(int quanOfEgg, int exception) {
-		exception=this.exception;
+	public Egg[][] deliverEgg(int quanOfEgg, int exception) throws FarmDeliveryQuantityException{
+		if(quanOfEgg<minimumOrderSize||quanOfEgg>maximumOrderSize) {
+			throw new FarmDeliveryQuantityException(minimumOrderSize,maximumOrderSize,quanOfEgg);
+		}
+		Egg[][] eggBoxStack=createEggBoxStack(quanOfEgg);
+		for(int i=0;i<eggBoxStack.length;i++) {
+			for(int j=0; j<(eggBoxStack[i].length);j++) {
+				eggBoxStack[i][j]=new Egg(exception);
+			}
+		}
+		return eggBoxStack;
 		
 	}
 	
