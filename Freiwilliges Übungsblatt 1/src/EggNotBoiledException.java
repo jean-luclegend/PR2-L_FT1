@@ -1,5 +1,5 @@
 
-public class EggNotBoiledException extends Exception{
+public class  EggNotBoiledException extends Exception{
 	
 	@Override
 	public String toString() {
