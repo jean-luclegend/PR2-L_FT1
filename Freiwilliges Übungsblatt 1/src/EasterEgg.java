@@ -1,20 +1,21 @@
 
-public class EasterEgg extends Egg {
+public class EasterEgg extends Egg { //subclass of egg with additional attributes and methods
 		
 	private Colour eggColour=null;
 	private boolean cooked;
 	//private boolean coloured=false;
 	
 	
-	public EasterEgg() {
+	public EasterEgg() { // standard constructor
 		
 	}
 	
 	public EasterEgg(Egg normalEgg) {
-		super(normalEgg);
+		super(normalEgg); 	// calls super constructor of the class Egg (Includes all attributes from class Egg)
+							// exists to create an easter egg from an egg
 	}
 	
-	public void cook() throws EggCrackException{
+	public void cook() throws EggCrackException{	// cooks egg with exception if egg was already cooked
 		if(cooked||getDefect()) {
 			throw new EggCrackException();
 		}
