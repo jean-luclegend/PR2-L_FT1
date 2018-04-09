@@ -25,7 +25,7 @@ public class EasterEggFactory {
 
 	}
 
-	public void colouringEggs(int indxPalette, Colour colour) throws EggColoredException, EggNotBoiledException, EggCrackException {
+	public void colouringEggs(int indxPalette, Colour colour) throws EggColoredException, EggNotBoiledException  {
 		for (int i = 0; i < easterEggBoxStack[indxPalette].length; i++) {
 			if (easterEggBoxStack[indxPalette][i].getEggColour() != Colour.ugly) {
 				easterEggBoxStack[indxPalette][i].colouring(colour);
@@ -33,10 +33,10 @@ public class EasterEggFactory {
 				destroyPalette(indxPalette);
 				throw new EggColoredException(easterEggBoxStack[indxPalette][i].getEggColour(), colour);
 			}
-			if (!easterEggBoxStack[indxPalette][i].getCooked()) {
+			try {
 				easterEggBoxStack[indxPalette][i].cook();
 			}
-			else {
+			catch(EggCrackException e) {
 				destroyPalette(indxPalette);
 				throw new EggNotBoiledException();
 			}

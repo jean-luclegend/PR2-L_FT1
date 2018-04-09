@@ -4,7 +4,7 @@ public class ChickenFarm {
 	private int [][] eggBoxStack;
 	private int minimumOrderSize;
 	private int maximumOrderSize;
-	private int exception=5;
+	private int exception;
 	
 	public ChickenFarm() {
 		minimumOrderSize=25;
