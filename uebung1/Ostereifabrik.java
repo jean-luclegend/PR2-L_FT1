@@ -27,10 +27,10 @@ public class Ostereifabrik {
 				try {
 					eierkartonstapel[palette][i].kochen();
 				}
-				catch (EggCrackException ex) {
+				catch (EggCrackException e) {
 					//Ei ging beim Kochen kaputt
 					vernichtePalette(palette);
-					throw ex;
+					throw e;
 				}							
 			}			
 		} 
